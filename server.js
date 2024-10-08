@@ -1,13 +1,11 @@
 // Import des modules nécessaires
 const express = require('express');
+const app = express();
 const sqlite3 = require('sqlite3').verbose();
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
 app.use(cors());
+app.use(express.static('public'));
 
 // Assure-toi que cette ligne est présente pour servir les fichiers statiques du dossier `public`
 app.use(express.static('public'));
