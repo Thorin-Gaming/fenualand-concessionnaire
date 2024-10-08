@@ -4,16 +4,13 @@ const app = express();
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 
-// Utiliser express.json() pour analyser les données JSON
+// Utiliser express.json() pour les données JSON
 app.use(express.json());
-// Utiliser express.urlencoded() pour analyser les données de formulaire encodées
+// Utiliser express.urlencoded() pour les données de formulaire encodées
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 app.use(express.static('public'));
-// Middleware
-app.use(bodyParser.json());
-app.use(cors());
 
 // Initialisation de la base de données SQLite
 const db = new sqlite3.Database('./database.sqlite');
