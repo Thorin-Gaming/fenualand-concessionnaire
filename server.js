@@ -4,6 +4,8 @@ const app = express();
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 
+const PORT = process.env.PORT || 3000; // Définit 3000 pour les tests locaux si `PORT` n'est pas défini
+
 // Utiliser express.json() pour les données JSON
 app.use(express.json());
 // Utiliser express.urlencoded() pour les données de formulaire encodées
