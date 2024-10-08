@@ -92,8 +92,3 @@ app.post('/api/categories', (req, res) => {
     const info = stmt.run(name);
     res.status(201).json({ id: info.lastInsertRowid });
 });
-
-// Démarrage du serveur
-app.listen(PORT, () => {
-    console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
-});
