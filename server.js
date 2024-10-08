@@ -6,6 +6,10 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3000; // Définit 3000 pour les tests locaux si `PORT` n'est pas défini
 
+app.listen(PORT, () => {
+    console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
+});
+
 // Utiliser express.json() pour les données JSON
 app.use(express.json());
 // Utiliser express.urlencoded() pour les données de formulaire encodées

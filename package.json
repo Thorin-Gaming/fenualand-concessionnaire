@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "npm rebuild sqlite3 --build-from-source"
+    "postinstall": "npm install better-sqlite3 --build-from-source"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "better-sqlite3": "^11.3.0",
+    "better-sqlite3": "^8.7.0",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "express": "^4.21.0"
