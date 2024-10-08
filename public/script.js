@@ -1,5 +1,5 @@
 // Appel à l'API pour récupérer les véhicules
-fetch('http://localhost:3000/api/vehicles')
+fetch('https://fenualand-concessionnaire.onrender.com/api/vehicles')
     .then(response => response.json())
     .then(data => {
         const carContainer = document.getElementById('car-container');
