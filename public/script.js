@@ -7,7 +7,7 @@ fetch('http://localhost:3000/api/vehicles')
             const carCard = document.createElement('div');
             carCard.className = 'car-card';
 
-            // Associe l'ID de la catégorie au nom de la catégorie avec categoryMap
+            // Utilisation de la catégorie pour le filtre
             const categoryName = categoryMap[vehicle.category_id] || 'aucune'; // "aucune" si aucune correspondance
             carCard.setAttribute('data-category', categoryName.toLowerCase());
 
@@ -24,8 +24,8 @@ fetch('http://localhost:3000/api/vehicles')
     .catch(error => {
         console.error('Erreur:', error);
     });
-	
-	function filterCategory(category) {
+
+function filterCategory(category) {
     const carCards = document.querySelectorAll('.car-card');
     carCards.forEach(card => {
         if (category === 'all') {
@@ -42,14 +42,4 @@ const categoryMap = {
     1: 'sportive',
     2: 'suv',
     3: '4x4'
-    // Ajoute d'autres associations ID-nom ici si nécessaire
 };
-
-db.all(`SELECT vehicles.*, categories.name AS category_name
-        FROM vehicles
-        LEFT JOIN categories ON vehicles.category_id = categories.id`, [], (err, rows) => {
-    if (err) {
-        return res.status(400).json({ error: err.message });
-    }
-    res.json({ vehicles: rows });
-});
