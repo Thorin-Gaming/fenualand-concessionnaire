@@ -7,11 +7,6 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const express = require('express');
-const app = express();
-const sqlite3 = require('sqlite3').verbose();
-const cors = require('cors');
-
 app.use(cors());
 
 // Assure-toi que cette ligne est présente pour servir les fichiers statiques du dossier `public`
