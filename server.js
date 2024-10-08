@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Initialisation de la base de données SQLite
-const db = new sqlite3.Database(':memory:');
+const db = new sqlite3.Database('./database.sqlite');
 
 // Création des tables dans la base de données
 db.serialize(() => {
@@ -48,9 +48,10 @@ app.get('/api/vehicles', (req, res) => {
 // Route pour ajouter un véhicule
 app.post('/api/vehicles', (req, res) => {
     const { name, price, max_speed, storage_capacity, category_id, sub_category, image_url } = req.body;
+
     const query = `INSERT INTO vehicles (name, price, max_speed, storage_capacity, category_id, sub_category, image_url)
                    VALUES (?, ?, ?, ?, ?, ?, ?)`;
-    db.run(query, [name, price, max_speed, storage_capacity, category_id, sub_category, image_url], function (err) {
+    db.run(query, [name, price, max_speed, storage_capacity, category_id, sub_category || null, image_url], function (err) {
         if (err) {
             return res.status(400).json({ error: err.message });
         }

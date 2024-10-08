@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Gestion des Véhicules</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Interface d'Administration</h1>
+    </header>
+    <section id="admin-container">
+        <form id="vehicle-form">
+			<h2>Ajouter un Véhicule</h2>
+		
+			<!-- Nom du véhicule -->
+			<label for="name">Nom :</label>
+			<input type="text" id="name" name="name" required>
+		
+			<!-- Prix du véhicule -->
+			<label for="price">Prix :</label>
+			<input type="number" id="price" name="price" required>
+			
+			<!-- Vitesse maximale -->
+			<label for="max_speed">Vitesse Max :</label>
+			<input type="number" id="max_speed" name="max_speed" required>
+			
+			<!-- Capacité de stockage -->
+			<label for="storage_capacity">Capacité de Stockage :</label>
+			<input type="number" id="storage_capacity" name="storage_capacity" required>
+			
+			<!-- Catégorie du véhicule -->
+			<label for="category">Catégorie :</label>
+			<select id="category" name="category" required>
+				<option value="1">Sportive</option>
+				<option value="2">SUV</option>
+				<option value="3">4x4</option>
+				<!-- Ajouter d'autres options ici -->
+			</select>
+			
+			<!-- Sous-catégorie -->
+			<label for="sub_category">Sous-catégorie (facultatif) :</label>
+			<input type="text" id="sub_category" name="sub_category">
+			
+			<!-- URL de l'image -->
+			<label for="image_url">URL de l'Image :</label>
+			<input type="text" id="image_url" name="image_url">
+			
+			<button type="submit">Ajouter le Véhicule</button>
+		</form>
+    </section>
+    <script src="admin.js"></script>
+</body>
+</html>
